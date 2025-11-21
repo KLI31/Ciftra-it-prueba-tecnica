@@ -27,24 +27,9 @@ const RoleProtectedRoute = ({
     }
   }, [role, allowedRoles, redirectTo, router]);
 
-  // Primero verificar autenticación, luego verificar rol
   return (
     <ProtectedRoute>
-      {role && allowedRoles.includes(role) ? (
-        children
-      ) : (
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-red-600 mb-2">
-              Acceso Denegado
-            </h2>
-            <p className="text-gray-600">
-              No tienes permisos para acceder a esta página.
-            </p>
-            <p className="text-sm text-gray-500 mt-2">Redirigiendo...</p>
-          </div>
-        </div>
-      )}
+      {role && allowedRoles.includes(role) ? children : <></>}
     </ProtectedRoute>
   );
 };

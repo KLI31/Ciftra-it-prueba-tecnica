@@ -6,9 +6,13 @@ interface ProfileIconProps {
 
 const ProfileIcon = ({ size, completeName, className }: ProfileIconProps) => {
   // Extraer las iniciales del nombre completo
-  const result = completeName.split(" ").map((n) => n[0].toUpperCase());
 
-  const initials = result[0] + result[result.length - 2];
+  const initials = completeName
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
 
   return (
     <div
