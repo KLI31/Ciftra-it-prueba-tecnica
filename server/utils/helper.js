@@ -1,3 +1,4 @@
+// Función para enviar respuestas exitosas
 const sendResponse = (res, messageObj, data = null) => {
   const response = {
     success: messageObj.status < 400,
@@ -11,6 +12,7 @@ const sendResponse = (res, messageObj, data = null) => {
   return res.status(messageObj.status).json(response);
 };
 
+// Función para enviar respuestas de error
 const sendError = (res, messageObj, errors = null) => {
   const response = {
     success: false,
@@ -24,6 +26,7 @@ const sendError = (res, messageObj, errors = null) => {
   return res.status(messageObj.status).json(response);
 };
 
+// Función para verificar formato de email
 const verifyEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);

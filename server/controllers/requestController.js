@@ -244,13 +244,26 @@ const assignRequest = async (req, res) => {
       return sendError(res, messages.requests.invalidAssignment);
     }
 
-    // Asignar la solicitud y cambiar estado a in_progress
-    const result = await pool.query(
+    await pool.query(
       `UPDATE requests
        SET assigned_to = $1, status = $2, updated_at = NOW()
-       WHERE id = $3
-       RETURNING id, title, status, client_id, assigned_to, response, created_at, updated_at`,
+       WHERE id = $3`,
       [supportId, "in_progress", id],
+    );
+
+    const result = await pool.query(
+      `SELECT
+        r.id, r.title, r.status, r.response,
+        r.created_at, r.updated_at,
+        r.client_id,
+        c.name as client_name, c.lastname as client_lastname, c.email as client_email,
+        r.assigned_to,
+        s.name as support_name, s.lastname as support_lastname, s.email as support_email
+      FROM requests r
+      LEFT JOIN users c ON r.client_id = c.id
+      LEFT JOIN users s ON r.assigned_to = s.id
+      WHERE r.id = $1`,
+      [id],
     );
 
     return sendResponse(res, messages.requests.assignSuccess, {
@@ -271,7 +284,6 @@ const respondToRequest = async (req, res) => {
     const userId = req.user.userId;
     const userRole = req.user.role;
 
-    // Solo SUPPORT puede responder
     if (userRole !== "SUPPORT") {
       return sendError(res, messages.requests.onlySupportCanRespond);
     }
@@ -287,7 +299,6 @@ const respondToRequest = async (req, res) => {
       return sendError(res, messages.requests.invalidStatus);
     }
 
-    // Validar respuesta
     if (response.length < 10) {
       return sendError(res, messages.requests.invalidResponse);
     }
@@ -304,18 +315,32 @@ const respondToRequest = async (req, res) => {
 
     const request = requestResult.rows[0];
 
-    // Verificar que la solicitud está asignada al usuario actual
     if (request.assigned_to !== userId) {
       return sendError(res, messages.requests.notAssignedToYou);
     }
 
     // Actualizar la solicitud
-    const result = await pool.query(
+    await pool.query(
       `UPDATE requests
        SET status = $1, response = $2, updated_at = NOW()
-       WHERE id = $3
-       RETURNING id, title, status, client_id, assigned_to, response, created_at, updated_at`,
+       WHERE id = $3`,
       [status, response, id],
+    );
+
+    // Obtener la solicitud actualizada con todos los datos relacionados
+    const result = await pool.query(
+      `SELECT
+        r.id, r.title, r.status, r.response,
+        r.created_at, r.updated_at,
+        r.client_id,
+        c.name as client_name, c.lastname as client_lastname, c.email as client_email,
+        r.assigned_to,
+        s.name as support_name, s.lastname as support_lastname, s.email as support_email
+      FROM requests r
+      LEFT JOIN users c ON r.client_id = c.id
+      LEFT JOIN users s ON r.assigned_to = s.id
+      WHERE r.id = $1`,
+      [id],
     );
 
     return sendResponse(res, messages.requests.responseSuccess, {

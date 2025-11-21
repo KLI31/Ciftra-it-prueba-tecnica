@@ -188,6 +188,12 @@ const messages = {
       message: "Esta solicitud ya está asignada",
     },
   },
+  support: {
+    getSupports: {
+      status: 200,
+      message: "Soportes obtenido exitosamente",
+    },
+  },
 };
 
 module.exports = messages;

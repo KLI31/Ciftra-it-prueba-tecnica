@@ -11,7 +11,6 @@ const verifyToken = (req, res, next) => {
       return sendError(res, messages.auth.noTokenProvided);
     }
 
-    // Formato esperado: "Bearer TOKEN"
     const token = authHeader.split(" ")[1];
 
     if (!token) {

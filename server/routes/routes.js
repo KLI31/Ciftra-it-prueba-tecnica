@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const authRoutes = require("./authRoutes");
 const requestsRoutes = require("./requestsRoutes");
+const usersRoutes = require("./usersRoutes");
 
 const router = Router();
 
@@ -14,5 +15,8 @@ router.use("/auth", authRoutes);
 
 // Rutas de solicitudes
 router.use("/requests", requestsRoutes);
+
+// Rutas de usuarios soporte
+router.use("/users", usersRoutes);
 
 module.exports = router;
