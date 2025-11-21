@@ -11,13 +11,13 @@ Solución completa para el reto técnico de desarrollo Full Stack. Una plataform
 | Login | Dashboard Admin |
 |-------|-----------------|
 
-|<img width="1914" height="910" alt="login" src="https://github.com/user-attachments/assets/28b350a8-8776-4ee1-84b4-4a3bd134d097" />
-| <img width="1903" height="912" alt="admin-dashboard" src="https://github.com/user-attachments/assets/50ec98aa-6f7e-4c1b-855e-8ae101b23409" />
+<img width="1914" height="910" alt="login" src="https://github.com/user-attachments/assets/28b350a8-8776-4ee1-84b4-4a3bd134d097" />
+<img width="1903" height="912" alt="admin-dashboard" src="https://github.com/user-attachments/assets/50ec98aa-6f7e-4c1b-855e-8ae101b23409" />
 
 | Panel de Soporte | Panel de Cliente |
 |------------------|------------------|
-| <img width="1918" height="917" alt="dashboard-soporte" src="https://github.com/user-attachments/assets/4f8eb840-5b4e-4242-9ac9-84fb50034be2" />
-| <img width="1916" height="914" alt="dashboard-usuario" src="https://github.com/user-attachments/assets/0c557d9b-723e-40dc-8ff3-e003a29207c4" />
+<img width="1918" height="917" alt="dashboard-soporte" src="https://github.com/user-attachments/assets/4f8eb840-5b4e-4242-9ac9-84fb50034be2" />
+<img width="1916" height="914" alt="dashboard-usuario" src="https://github.com/user-attachments/assets/0c557d9b-723e-40dc-8ff3-e003a29207c4" />
 
 
 
