@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import PublicRoute from "@/components/auth/PublicRoute";
-import { ViewTransition } from "react";
 
 export default function AuthLayout({
   children,
@@ -19,9 +18,7 @@ export default function AuthLayout({
     <PublicRoute>
       <main className="grid grid-cols-1 lg:grid-cols-2 min-h-screen bg-white">
         <div className="flex items-center justify-center p-6 sm:p-8 lg:p-12 xl:p-16">
-          <div className="w-full max-w-md">
-            <ViewTransition>{children}</ViewTransition>
-          </div>
+          <div className="w-full max-w-md">{children}</div>
         </div>
 
         <div className="hidden lg:block relative bg-gradient-to-br from-primary/10 to-primary/5">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Exo_2 } from "next/font/google";
 import { Toaster } from "sonner";
+import { ViewTransition } from "react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -36,7 +37,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Toaster position="top-right" richColors />
-        {children}
+        <ViewTransition>{children}</ViewTransition>
       </body>
     </html>
   );
