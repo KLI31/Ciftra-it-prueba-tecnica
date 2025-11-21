@@ -11,7 +11,8 @@ Solución completa para el reto técnico de desarrollo Full Stack. Una plataform
 | Login | Dashboard Admin |
 |-------|-----------------|
 
-| ![Login](./screenshots/login.png) | ![Dashboard Admin](./screenshots/admin-dashboard.png) |
+| ![Login](<img width="1914" height="910" alt="login" src="https://github.com/user-attachments/assets/28b350a8-8776-4ee1-84b4-4a3bd134d097" />
+ | ![Dashboard Admin](./screenshots/admin-dashboard.png) |
 
 | Panel de Soporte | Panel de Cliente |
 |------------------|------------------|
