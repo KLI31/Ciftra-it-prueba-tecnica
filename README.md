@@ -8,10 +8,12 @@ Solución completa para el reto técnico de desarrollo Full Stack. Una plataform
 
 <!-- Agregar capturas de pantalla del proyecto -->
 
-| Login | Dashboard Admin |
+| Login & Register | Dashboard Admin |
 |-------|-----------------|
 
 <img width="1914" height="910" alt="login" src="https://github.com/user-attachments/assets/28b350a8-8776-4ee1-84b4-4a3bd134d097" />
+<img width="1919" height="912" alt="Captura de pantalla 2025-11-21 141153" src="https://github.com/user-attachments/assets/aa58f940-61df-426f-8657-18935fd28f0a" />
+
 <img width="1903" height="912" alt="admin-dashboard" src="https://github.com/user-attachments/assets/50ec98aa-6f7e-4c1b-855e-8ae101b23409" />
 
 | Panel de Soporte | Panel de Cliente |
