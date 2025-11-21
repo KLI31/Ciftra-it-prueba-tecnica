@@ -86,3 +86,23 @@ export interface RequestStats {
     resolved: number;
   }>;
 }
+
+export interface RequestsState {
+  requests: Request[];
+  requestStats: RequestStats | null;
+  totalCount: number;
+  loading: boolean;
+  error: string | null;
+  fetchRequests(filters?: RequestFilters): Promise<void>;
+  createRequest(payload: CreateRequestPayload): Promise<void>;
+  assignRequest(
+    requestId: string,
+    payload: AssignRequestPayload,
+  ): Promise<void>;
+  respondToRequest(
+    requestId: string,
+    payload: RespondRequestPayload,
+  ): Promise<void>;
+  fetchRequestStats(): Promise<RequestStats>;
+  deleteRequest(requestId: string): Promise<void>;
+}

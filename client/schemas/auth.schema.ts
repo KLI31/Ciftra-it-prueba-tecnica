@@ -1,6 +1,5 @@
 import { z } from "zod";
 
-// Schema para Login
 export const LoginSchema = z.object({
   email: z
     .string()
@@ -9,7 +8,7 @@ export const LoginSchema = z.object({
   password: z
     .string()
     .min(1, "La contraseña es requerida")
-    .min(3, "La contraseña debe tener al menos 3 caracteres"),
+    .min(8, "La contraseña debe tener al menos 8 caracteres"),
 });
 
 export const RegisterSchema = z
