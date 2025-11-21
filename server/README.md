@@ -89,11 +89,6 @@ server/
 
 ## Modelo de Datos
 
-### Diagrama ER
-
-<!-- Agregar diagrama de Excalidraw -->
-
-![ER Diagram](../screenshots/er-diagram-excalidraw.png)
 
 ### Tabla `users`
 
