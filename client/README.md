@@ -4,19 +4,6 @@ Frontend del sistema de gestión de solicitudes desarrollado con **Next.js 16**,
 
 ---
 
-## Vista Previa
-
-<!-- Agregar capturas de pantalla -->
-
-| Vista | Captura |
-|-------|---------|
-| Login | ![Login](../screenshots/login.png) |
-| Register | ![Register](../screenshots/register.png) |
-| Dashboard Admin | ![Admin Dashboard](../screenshots/admin-dashboard.png) |
-| Dashboard Soporte | ![Support Dashboard](../screenshots/support-dashboard.png) |
-| Dashboard Cliente | ![Client Dashboard](../screenshots/client-dashboard.png) |
-
----
 
 ## Tecnologías
 
@@ -295,7 +282,4 @@ HOC que protege rutas verificando el rol del usuario autenticado.
 - `AssignRequestModal` - Asignar solicitud (admin)
 - `CreateSupportUserModal` - Crear usuario soporte
 - `DeleteSupportUserModal` - Eliminar usuario soporte
-
-### Skeletons
-Componentes de carga animados para mejorar la UX durante fetching de datos.
 ---
