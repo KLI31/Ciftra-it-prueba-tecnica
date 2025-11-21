@@ -6,13 +6,13 @@ import type {
 } from "@/types/auth.types";
 import type { ApiResponse } from "@/types/response.types";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3003/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
 
 export const registerService = async (
   payload: RegisterPayload,
 ): Promise<AuthResponse> => {
   try {
-    const response = await fetch(`${BASE_URL}/auth/register`, {
+    const response = await fetch(`${API_URL}/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export const loginService = async (
   payload: LoginPayload,
 ): Promise<AuthResponse> => {
   try {
-    const response = await fetch(`${BASE_URL}/auth/login`, {
+    const response = await fetch(`${API_URL}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,8 +61,6 @@ export const loginService = async (
     if (!result.data) {
       throw new Error("Respuesta del servidor inválida");
     }
-
-    console.log("resulados", result);
 
     return {
       ...result.data,

@@ -1,7 +1,7 @@
 import { getAuthHeaders } from "@/lib/utils";
 import { SupportUser, CreateSupportUserPayload } from "@/types/support.types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3003/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
 
 export const getSupportUsersService = async (): Promise<SupportUser[]> => {
   const response = await fetch(`${API_URL}/users/support`, {

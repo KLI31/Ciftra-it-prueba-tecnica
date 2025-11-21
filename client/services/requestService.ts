@@ -7,7 +7,7 @@ import {
   AssignRequestPayload,
   RespondRequestPayload,
 } from "@/types/requests.types";
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3003/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
 
 export const createRequestService = async (
   payload: CreateRequestPayload,
