@@ -10,6 +10,7 @@ Solución completa para el reto técnico de desarrollo Full Stack. Una plataform
 
 | Login | Dashboard Admin |
 |-------|-----------------|
+
 | ![Login](./screenshots/login.png) | ![Dashboard Admin](./screenshots/admin-dashboard.png) |
 
 | Panel de Soporte | Panel de Cliente |
@@ -18,27 +19,9 @@ Solución completa para el reto técnico de desarrollo Full Stack. Una plataform
 
 ---
 
-## Arquitectura del Sistema
+## Diagrama de Flujo
 
-<!-- Agregar diagrama de Excalidraw -->
-
-![Arquitectura](./screenshots/architecture-excalidraw.png)
-
-### Diagrama de Flujo de Solicitudes
-
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   CLIENTE   │────>│    ADMIN    │────>│   SOPORTE   │
-│             │     │             │     │             │
-│ Crea ticket │     │ Asigna a    │     │ Responde y  │
-│             │     │ soporte     │     │ resuelve    │
-└─────────────┘     └─────────────┘     └─────────────┘
-       │                                       │
-       │                                       │
-       └───────────── Ve respuesta ───────────┘
-```
-
----
+<img width="1223" height="707" alt="Flujo" src="https://github.com/user-attachments/assets/d3345302-0a39-43f7-8461-db434b069f20" />
 
 ## Tecnologías y Decisiones Técnicas
 
@@ -268,15 +251,6 @@ npm run dev
 - **Backend:** http://localhost:3001
 ---
 
-## Usuarios de Prueba
-
-| Rol | Email | Contraseña |
-|-----|-------|------------|
-| Admin | admin@cifra.com | Admin123 |
-| Soporte | soporte@cifra.com | Soporte123 |
-| Cliente | cliente@cifra.com | Cliente123 |
-
----
 
 ## Decisiones de Diseño
 
